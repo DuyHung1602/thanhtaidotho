@@ -398,19 +398,19 @@
    BƯỚC 3 · Để trống "" nếu chưa có ảnh — chỗ đó sẽ hiện ô tạm, không lỗi.
    ═══════════════════════════════════════════════════════════════ */
 
-const ANH_BASE = "";
+const ANH_BASE = "";   // ảnh nằm cùng thư mục với index.html trong repo
 
 const ANH = {
 
-  hero: "nendep.jpg",            // Ảnh khung lớn ở đầu trang
+  hero: "khunga1.jpg",             // Ảnh khung lớn ở đầu trang
 
   sanpham: {                       // Ảnh cho từng thẻ mẫu (để trống "" thì hiện số)
-    khung1anh:  "khunga1.jpg",                //   Khung 1 ảnh
-    khung2anh:  "khunga2.jpg",                //   Khung 2 ảnh
-    khung34anh: "khunga3.jpg",                //   Khung 3–4 ảnh
-    khung6anh:  "khunga4.jpg",                //   Khung 6 ảnh
-    theoyeucau: "khacrieng.jpg",                //   Chạm khắc riêng
-    tuvan:      "chuachon.jpg"                 //   Thẻ tư vấn
+    khung1anh:  "",                //   Khung 1 ảnh
+    khung2anh:  "",                //   Khung 2 ảnh
+    khung34anh: "",                //   Khung 3–4 ảnh
+    khung6anh:  "",                //   Khung 6 ảnh
+    theoyeucau: "",                //   Chạm khắc riêng
+    tuvan:      ""                 //   Thẻ tư vấn
   },
 
   giaohang: [                      // Dải ảnh xe hàng giao tỉnh (lướt ngang) — thêm/bớt thoải mái
@@ -436,7 +436,7 @@ const ANH = {
    • Khi có mã: trang tự đếm lượt xem (PageView) và đếm "Lead" mỗi khi
      khách bấm nút Zalo, "Contact" khi khách bấm gọi điện.
    ═══════════════════════════════════════════════════════════════ */
-const PIXEL_ID = "2200413927399174";   // ← dán mã Pixel vào đây
+const PIXEL_ID = "2200413927399174";   // ← đã điền sẵn Pixel ID của bạn
 
 if (PIXEL_ID) {
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -508,7 +508,7 @@ if (PIXEL_ID) {
       <article class="card reveal">
         <div class="thumb" data-anh="khung1anh"><span class="ph">1</span></div>
         <div class="body">
-          <h3>Khung 1 </h3>
+          <h3>Khung 1 ảnh</h3>
           <p class="desc">Thờ một người, trang nghiêm và ấm cúng. Phù hợp bàn thờ nhỏ, căn hộ.</p>
           <div class="price">từ 1.200.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
           <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
@@ -517,7 +517,7 @@ if (PIXEL_ID) {
       <article class="card reveal">
         <div class="thumb" data-anh="khung2anh"><span class="ph">2</span><span class="tag">Phổ biến</span></div>
         <div class="body">
-          <h3>Khung 2 </h3>
+          <h3>Khung 2 ảnh</h3>
           <p class="desc">Thờ ông bà, hoặc bố mẹ — cặp đôi cân đối, được chọn nhiều nhất.</p>
           <div class="price">từ 1.800.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
           <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
@@ -526,7 +526,7 @@ if (PIXEL_ID) {
       <article class="card reveal">
         <div class="thumb" data-anh="khung34anh"><span class="ph">4</span></div>
         <div class="body">
-          <h3>Khung 3 </h3>
+          <h3>Khung 3 – 4 ảnh</h3>
           <p class="desc">Thờ trọn ông bà nội và bố mẹ trong một bố cục theo vai vế.</p>
           <div class="price">từ 2.500.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
           <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
@@ -535,7 +535,7 @@ if (PIXEL_ID) {
       <article class="card reveal">
         <div class="thumb" data-anh="khung6anh"><span class="ph">6</span></div>
         <div class="body">
-          <h3>Khung 4 </h3>
+          <h3>Khung 6 ảnh</h3>
           <p class="desc">Cho gia đình thờ nhiều đời gia tiên, bố cục đầy đặn, bề thế.</p>
           <div class="price">từ 3.500.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
           <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
@@ -693,7 +693,7 @@ if (PIXEL_ID) {
 </div>
 
 <script>
-  (function(){
+  function renderAnh(){
     function url(name){return name ? (ANH_BASE + name) : "";}
 
     var hero=document.getElementById('anh-hero');
@@ -724,7 +724,8 @@ if (PIXEL_ID) {
         strip.appendChild(img);
       });
     }
-  })();
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',renderAnh);}else{renderAnh();}
 
   const io=new IntersectionObserver((es)=>{
     es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
@@ -751,8 +752,19 @@ if (PIXEL_ID) {
       var a=e.target.closest('a[href]');
       if(!a)return;
       var h=a.getAttribute('href')||'';
-      if(h.indexOf('zalo.me')>-1){ if(window.fbq) fbq('track','Lead'); }
-      else if(h.indexOf('tel:')===0){ if(window.fbq) fbq('track','Contact'); }
+      if(h.indexOf('zalo.me')>-1){
+        // Tạo event_id chung cho cả Pixel và CAPI → Meta tự khử trùng, không đếm 2 lần
+        var eid='lead_'+Date.now();
+        if(window.fbq) fbq('track','Lead',{},{eventID:eid});
+        fetch('/.netlify/functions/capi',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({event_name:'Lead',event_id:eid,url:location.href})
+        }).catch(function(){});
+      }
+      else if(h.indexOf('tel:')===0){
+        if(window.fbq) fbq('track','Contact');
+      }
     });
   })();
 </script>
