@@ -170,6 +170,7 @@
     aspect-ratio:4/3;
     background:linear-gradient(150deg,#8a5230,#5a331b);
     display:grid;place-items:center;color:#e9d6b6;position:relative;
+    overflow:hidden;
   }
   .card .thumb .ph{font-family:"Lora",serif;font-size:2.4rem;color:rgba(233,214,182,.55)}
   .card .body{padding:1.3rem 1.3rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
@@ -477,7 +478,7 @@ if (PIXEL_ID) {
     </div>
     <div class="hero-frame reveal in">
       <div class="mat">
-        <div class="photo" id="anh-hero" alt="Khung ảnh thờ gỗ chạm khắc" data-full="https://thanhtai-mynghe.netlify.app/khunganh.jpg" style="background-image:url('https://thanhtai-mynghe.netlify.app/khunganh.jpg')"></div>
+        <div class="photo" id="anh-hero" alt="Khung ảnh thờ gỗ chạm khắc"></div>
         <span class="nameplate">Chạm khắc theo gia tiên</span>
       </div>
     </div>
@@ -705,7 +706,7 @@ if (PIXEL_ID) {
       img.src=url(name);
       img.alt='Mẫu khung ảnh thờ';
       img.loading='lazy';
-      img.style.cssText='width:100%;height:100%;object-fit:cover';
+      img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block';
       var ph=thumb.querySelector('.ph');
       if(ph)ph.remove();
       thumb.insertBefore(img,thumb.firstChild);
