@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khung Ảnh Thờ Gia Tiên — Mỹ Nghệ Thanh Tài | Làng nghề Phù Khê</title>
+<meta name="description" content="Khung ảnh thờ gỗ thật, chạm khắc thủ công làng nghề Phù Khê. Cam kết đúng gỗ — hoàn tiền nếu sai. Tư vấn chọn khung theo gia tiên qua Zalo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241710;
+    --wood:#6e3e22;
+    --wood-deep:#1c120a;
+    --wood-deep-2:#2b1a0f;
+    --gold:#b5912f;
+    --gold-soft:#cdab57;
+    --gold-line:rgba(181,145,47,.55);
+    --paper:#f4ecdc;
+    --paper-2:#ebe0cb;
+    --cream:#fbf7ee;
+    --muted:#6f5c46;
+    --line:rgba(58,38,20,.14);
+    --shadow:0 18px 50px -24px rgba(40,24,10,.5);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Be Vietnam Pro",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.75;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:"Lora",Georgia,serif}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1080px,92vw);margin:0 auto}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(28,18,10,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--gold-line);
+  }
+  .bar{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+  .brand{display:flex;align-items:center;gap:.6rem;color:var(--cream)}
+  .seal{
+    width:38px;height:38px;border-radius:50%;
+    border:1.5px solid var(--gold-soft);
+    display:grid;place-items:center;
+    font-family:"Lora",serif;font-weight:700;color:var(--gold-soft);
+    font-size:1rem;flex:none;
+  }
+  .brand b{font-family:"Lora",serif;font-weight:600;font-size:1.05rem;letter-spacing:.3px}
+  .brand small{display:block;color:var(--gold-soft);font-size:.66rem;letter-spacing:2px;text-transform:uppercase;font-family:"Be Vietnam Pro",sans-serif}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:.45rem;
+    background:var(--gold);color:#23150a;font-weight:600;
+    padding:.5rem 1.05rem;border-radius:40px;font-size:.92rem;
+    transition:transform .2s,background .2s;
+  }
+  .nav-cta:hover{background:var(--gold-soft);transform:translateY(-1px)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(120% 90% at 50% -10%, rgba(181,145,47,.16), transparent 55%),
+      linear-gradient(180deg,var(--wood-deep) 0%, var(--wood-deep-2) 100%);
+    color:var(--cream);
+    padding:clamp(3.2rem,8vw,6rem) 0 clamp(3.4rem,8vw,6rem);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:18px;
+    border:1px solid var(--gold-line);
+    border-radius:6px;pointer-events:none;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:24px;
+    border:1px solid rgba(181,145,47,.22);
+    border-radius:4px;pointer-events:none;
+  }
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.5rem;
+    color:var(--gold-soft);font-size:.74rem;letter-spacing:3px;text-transform:uppercase;
+    margin-bottom:1.1rem;font-weight:500;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold-soft)}
+  .hero h1{
+    font-size:clamp(2.1rem,5.2vw,3.5rem);
+    line-height:1.18;font-weight:600;letter-spacing:.2px;
+    margin-bottom:1.2rem;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero p.lead{font-size:clamp(1rem,2.4vw,1.15rem);color:#e7d7be;max-width:30rem;margin-bottom:1.8rem;font-weight:300}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+  .chip{
+    display:inline-flex;align-items:center;gap:.4rem;
+    border:1px solid var(--gold-line);border-radius:40px;
+    padding:.38rem .85rem;font-size:.82rem;color:#eaddc4;
+  }
+  .chip span{color:var(--gold-soft);font-weight:600}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:.55rem;
+    background:var(--gold);color:#23150a;font-weight:600;
+    padding:.9rem 1.7rem;border-radius:46px;font-size:1.02rem;
+    box-shadow:0 12px 30px -12px rgba(181,145,47,.7);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px -14px rgba(181,145,47,.85)}
+  .btn-ghost{color:#e7d7be;font-size:.95rem;border-bottom:1px solid var(--gold-line);padding-bottom:2px}
+  .btn-ghost:hover{color:var(--gold-soft)}
+
+  .hero-frame{position:relative;justify-self:center}
+  .hero-frame .mat{
+    background:linear-gradient(160deg,#7a4527,#4e2c16);
+    padding:18px;border-radius:8px;
+    box-shadow:var(--shadow), inset 0 0 0 2px rgba(205,171,87,.5);
+    position:relative;
+  }
+  .hero-frame .photo{
+    aspect-ratio:3/4;width:clamp(220px,32vw,300px);
+    background:#0e0905 center/cover no-repeat;
+    border:1px solid rgba(205,171,87,.4);
+    display:grid;place-items:center;text-align:center;color:#9c8a6f;
+    font-size:.85rem;padding:1rem;
+  }
+  .hero-frame .nameplate{
+    position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);
+    background:var(--gold);color:#23150a;font-family:"Lora",serif;
+    font-size:.78rem;font-weight:600;letter-spacing:1px;
+    padding:.3rem 1.1rem;border-radius:30px;white-space:nowrap;
+  }
+
+  /* ---------- section frame ---------- */
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+  .sec-head{text-align:center;max-width:40rem;margin:0 auto clamp(2rem,5vw,3rem)}
+  .sec-eyebrow{color:var(--wood);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:.7rem}
+  .sec-head h2{font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.25;font-weight:600;margin-bottom:.8rem}
+  .sec-head p{color:var(--muted);font-size:1.02rem}
+
+  /* ---------- empathy ---------- */
+  .empathy{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .empathy .inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+  .empathy blockquote{
+    font-family:"Lora",serif;font-style:italic;font-size:clamp(1.3rem,3vw,1.7rem);
+    line-height:1.5;color:var(--ink);border-left:2px solid var(--gold);padding-left:1.3rem;
+  }
+  .empathy .body p{color:var(--muted);margin-bottom:1rem}
+  .empathy .body p strong{color:var(--wood);font-weight:600}
+
+  /* ---------- products ---------- */
+  .grid{display:grid;gap:1.2rem}
+  .grid.cols{grid-template-columns:repeat(3,1fr)}
+  .card{
+    background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;
+    display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--gold-line)}
+  .card .thumb{
+    aspect-ratio:4/3;
+    background:linear-gradient(150deg,#8a5230,#5a331b);
+    display:grid;place-items:center;color:#e9d6b6;position:relative;
+  }
+  .card .thumb .ph{font-family:"Lora",serif;font-size:2.4rem;color:rgba(233,214,182,.55)}
+  .card .body{padding:1.3rem 1.3rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+  .card h3{font-size:1.2rem;font-weight:600}
+  .card .desc{color:var(--muted);font-size:.92rem;flex:1}
+  .card .price{font-family:"Lora",serif;color:var(--wood);font-weight:600;font-size:1.05rem}
+  .card .price small{display:block;color:var(--muted);font-weight:400;font-size:.74rem;font-family:"Be Vietnam Pro",sans-serif;letter-spacing:.3px}
+  .card .pick{
+    margin-top:.4rem;align-self:flex-start;
+    display:inline-flex;align-items:center;gap:.4rem;
+    color:var(--wood);font-weight:600;font-size:.9rem;border-bottom:1px solid var(--gold-line);padding-bottom:2px;
+  }
+  .card .pick:hover{color:var(--gold)}
+  .tag{position:absolute;top:.7rem;left:.7rem;background:var(--gold);color:#23150a;font-size:.7rem;font-weight:600;padding:.2rem .65rem;border-radius:30px;letter-spacing:.4px}
+
+  .price-note{text-align:center;color:var(--muted);font-size:.86rem;margin-top:1.4rem;font-style:italic}
+
+  /* ---------- invite (gửi mẫu) ---------- */
+  .invite{background:var(--paper)}
+  .invite .inner{
+    position:relative;background:var(--cream);
+    border:1px solid var(--gold-line);border-radius:18px;
+    padding:clamp(2rem,5vw,3.2rem);text-align:center;overflow:hidden;
+  }
+  .invite .inner::before{
+    content:"";position:absolute;inset:9px;border:1px solid rgba(181,145,47,.25);
+    border-radius:12px;pointer-events:none;
+  }
+  .invite .tease{
+    display:inline-block;color:var(--wood);font-size:.74rem;letter-spacing:2.5px;
+    text-transform:uppercase;font-weight:600;margin-bottom:.9rem;position:relative;
+  }
+  .invite h2{font-size:clamp(1.6rem,3.8vw,2.3rem);font-weight:600;line-height:1.3;margin-bottom:.9rem;position:relative}
+  .invite h2 em{font-style:italic;color:var(--wood)}
+  .invite .sub{color:var(--muted);max-width:36rem;margin:0 auto 2rem;position:relative}
+  .invite .steps{
+    position:relative;display:grid;grid-template-columns:repeat(3,1fr);
+    gap:1rem;max-width:46rem;margin:0 auto 2rem;text-align:left;
+  }
+  .invite .step{display:flex;gap:.7rem;align-items:flex-start}
+  .invite .step .n{
+    width:30px;height:30px;flex:none;border-radius:50%;
+    background:var(--gold);color:#23150a;font-family:"Lora",serif;font-weight:700;
+    display:grid;place-items:center;font-size:.95rem;
+  }
+  .invite .step b{font-weight:600;font-size:.95rem;display:block}
+  .invite .step span{color:var(--muted);font-size:.85rem}
+  .invite .note{position:relative;margin-top:1.2rem;color:var(--muted);font-size:.84rem;font-style:italic}
+
+  /* ---------- trust ---------- */
+  .trust{background:var(--paper-2)}
+  .grid.trust-grid{grid-template-columns:repeat(4,1fr);gap:1rem}
+  .tcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.3rem;text-align:center}
+  .tcard .ic{
+    width:48px;height:48px;border-radius:50%;margin:0 auto .9rem;
+    border:1.5px solid var(--gold);color:var(--wood);
+    display:grid;place-items:center;font-family:"Lora",serif;font-size:1.3rem;font-weight:700;
+  }
+  .tcard h3{font-size:1.05rem;font-weight:600;margin-bottom:.4rem}
+  .tcard p{color:var(--muted);font-size:.88rem}
+
+  /* ---------- lightbox ---------- */
+  .gstrip img,.hero-frame .photo,.card .thumb img{cursor:zoom-in}
+  .lightbox{
+    position:fixed;inset:0;z-index:200;display:none;
+    align-items:center;justify-content:center;padding:18px;
+    background:rgba(14,9,5,.93);cursor:zoom-out;
+  }
+  .lightbox.open{display:flex}
+  .lightbox img{
+    max-width:96vw;max-height:90vh;border-radius:8px;
+    border:1px solid var(--gold-line);
+    box-shadow:0 30px 90px -20px rgba(0,0,0,.8);
+  }
+  .lightbox .close{
+    position:absolute;top:14px;right:18px;width:42px;height:42px;
+    border:1px solid var(--gold-line);background:rgba(28,18,10,.6);
+    color:var(--cream);font-size:1.6rem;line-height:1;border-radius:50%;
+    cursor:pointer;display:grid;place-items:center;
+  }
+  .lightbox .hint{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:var(--gold-soft);font-size:.82rem}
+
+  /* ---------- gallery ---------- */
+  .gallery{background:var(--wood-deep);color:var(--cream)}
+  .gallery .sec-head h2{color:var(--cream)}
+  .gallery .sec-eyebrow{color:var(--gold-soft)}
+  .gallery .sec-head p{color:#cdb79a}
+  .swipe-hint{text-align:center;color:var(--gold-soft);font-size:.82rem;margin-bottom:1rem;letter-spacing:.5px}
+  .gstrip{
+    display:flex;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;padding:.2rem .2rem 1rem;
+    scrollbar-width:thin;scrollbar-color:var(--gold-line) transparent;
+  }
+  .gstrip::-webkit-scrollbar{height:6px}
+  .gstrip::-webkit-scrollbar-thumb{background:var(--gold-line);border-radius:10px}
+  .gstrip img,.gstrip .gph{
+    flex:0 0 auto;width:230px;aspect-ratio:4/3;scroll-snap-align:start;
+    border-radius:12px;object-fit:cover;
+    border:1px solid var(--gold-line);
+    background:linear-gradient(150deg,#3a2415,#23160c);
+  }
+  .gstrip .gph{display:grid;place-items:center;color:#8c765a;font-size:.8rem;text-align:center;padding:.6rem}
+
+  /* ---------- consult ---------- */
+  .consult .inner{
+    background:var(--cream);border:1px solid var(--gold-line);border-radius:18px;
+    padding:clamp(1.8rem,5vw,3rem);display:grid;grid-template-columns:1.3fr 1fr;
+    gap:clamp(1.4rem,4vw,3rem);align-items:center;
+  }
+  .consult h2{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:600;margin-bottom:.9rem;line-height:1.3}
+  .consult ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;color:var(--muted)}
+  .consult li{display:flex;gap:.6rem;align-items:flex-start}
+  .consult li::before{content:"›";color:var(--gold);font-weight:700;font-family:"Lora",serif}
+  .consult .side{text-align:center}
+  .consult .side .btn-primary{width:100%;justify-content:center;margin-bottom:.7rem}
+  .consult .side small{color:var(--muted);font-size:.82rem}
+
+  /* ---------- reviews ---------- */
+  .reviews{background:var(--paper-2)}
+  .grid.rev-grid{grid-template-columns:repeat(3,1fr);gap:1.2rem}
+  .rcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:.7rem}
+  .rcard p{font-family:"Lora",serif;font-style:italic;color:var(--ink);margin-bottom:1rem;font-size:1.02rem;line-height:1.55}
+  .rcard .who{display:flex;align-items:center;gap:.7rem}
+  .rcard .who .av{width:38px;height:38px;border-radius:50%;background:var(--wood);color:var(--cream);display:grid;place-items:center;font-family:"Lora",serif;font-weight:600;flex:none}
+  .rcard .who b{font-weight:600;font-size:.92rem}
+  .rcard .who span{display:block;color:var(--muted);font-size:.78rem}
+
+  /* ---------- final cta ---------- */
+  .final{
+    background:
+      radial-gradient(120% 100% at 50% 0%, rgba(181,145,47,.18), transparent 60%),
+      linear-gradient(180deg,var(--wood-deep-2),var(--wood-deep));
+    color:var(--cream);text-align:center;position:relative;
+  }
+  .final::before{content:"";position:absolute;inset:18px;border:1px solid var(--gold-line);border-radius:6px;pointer-events:none}
+  .final h2{font-size:clamp(1.8rem,4.5vw,2.7rem);font-weight:600;margin-bottom:1rem;position:relative}
+  .final p{color:#d9c6a7;max-width:34rem;margin:0 auto 2rem;position:relative}
+  .final .phone{font-family:"Lora",serif;font-size:1.6rem;color:var(--gold-soft);margin-bottom:1.6rem;position:relative}
+  .final .hero-cta{justify-content:center;position:relative}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--wood-deep);color:#b59b7c;padding:2.4rem 0;text-align:center;border-top:1px solid var(--gold-line)}
+  footer .brand{justify-content:center;margin-bottom:1rem}
+  footer p{font-size:.86rem;margin:.2rem 0}
+  footer a{color:var(--gold-soft)}
+
+  /* ---------- sticky mobile bar ---------- */
+  .mobile-bar{display:none}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;text-align:center}
+    .eyebrow{justify-content:center}
+    .hero p.lead{margin-left:auto;margin-right:auto}
+    .chips,.hero-cta{justify-content:center}
+    .hero-frame{order:-1}
+    .empathy .inner{grid-template-columns:1fr}
+    .empathy blockquote{padding-left:0;border-left:0;border-top:2px solid var(--gold);padding-top:1rem;text-align:center}
+    .grid.cols{grid-template-columns:1fr 1fr}
+    .grid.trust-grid{grid-template-columns:1fr 1fr}
+    .invite .steps{grid-template-columns:1fr;max-width:24rem;gap:.9rem}
+    .consult .inner{grid-template-columns:1fr;text-align:center}
+    .consult ul{text-align:left}
+    .grid.rev-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    .wrap{width:90vw}
+    .nav-cta span.lbl{display:none}
+    .bar{padding:.55rem 0}
+    .brand b{font-size:.95rem}
+    .seal{width:34px;height:34px}
+    .hero{padding:2.6rem 0 3rem}
+    .hero::before{inset:12px}
+    .hero::after{inset:17px}
+    .hero h1{font-size:2rem;line-height:1.2}
+    .hero p.lead{font-size:1rem}
+    .chip{font-size:.78rem;padding:.34rem .7rem}
+    .hero-frame .photo{width:min(72vw,260px)}
+    .btn-primary{width:100%;justify-content:center}
+    .hero-cta{flex-direction:column;align-items:stretch;gap:.7rem}
+    .hero-cta .btn-ghost{align-self:center}
+    section{padding:2.6rem 0}
+    .sec-head{margin-bottom:1.8rem}
+    .grid.cols{grid-template-columns:1fr}
+    .grid.trust-grid{grid-template-columns:1fr}
+    .invite .inner{padding:1.8rem 1.2rem}
+    .invite .btn-primary{width:100%}
+    .consult .side .btn-primary{width:100%}
+    body{padding-bottom:66px}
+    .mobile-bar{
+      display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;
+      background:rgba(28,18,10,.97);border-top:1px solid var(--gold-line);
+      padding:.55rem .7rem;gap:.55rem;
+      padding-bottom:calc(.55rem + env(safe-area-inset-bottom,0px));
+    }
+    .mobile-bar a{flex:1;text-align:center;padding:.8rem;border-radius:40px;font-weight:600;font-size:.94rem}
+    .mobile-bar .mz{background:var(--gold);color:#23150a;flex:1.5}
+    .mobile-bar .mc{border:1px solid var(--gold-line);color:var(--cream)}
+  }
+</style>
+</head>
+<body>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   ❖ SỬA ẢNH Ở ĐÂY — chỉ cần đổi 1 khối này là toàn bộ ảnh trang đổi theo
+   ───────────────────────────────────────────────────────────────
+   BƯỚC 1 · ANH_BASE = nơi để ảnh.
+            • CÁCH KHUYÊN DÙNG (repo GitHub deploy qua Netlify):
+              - Bỏ ảnh vào thư mục "img/" trong repo  →  ANH_BASE = "img/"
+              - Hoặc bỏ ảnh cạnh file html (gốc repo)  →  ANH_BASE = ""
+              (đường dẫn tương đối: đổi tên site Netlify vẫn không hỏng ảnh)
+            • Hoặc dùng link đầy đủ (vd https://ten-site.netlify.app/), nhớ "/" ở cuối.
+   BƯỚC 2 · Upload ảnh, đặt tên file ĐÚNG như danh sách bên dưới
+            (hoặc đổi tên trong danh sách cho khớp tên file của bạn).
+   BƯỚC 3 · Để trống "" nếu chưa có ảnh — chỗ đó sẽ hiện ô tạm, không lỗi.
+   ═══════════════════════════════════════════════════════════════ */
+
+const ANH_BASE = "https://thanhtai-mynghe.netlify.app/";   // ← đổi thành "img/" (hoặc "") khi đã bỏ ảnh vào repo
+
+const ANH = {
+
+  hero: "khunganh.jpg",            // Ảnh khung lớn ở đầu trang
+
+  sanpham: {                       // Ảnh cho từng thẻ mẫu (để trống "" thì hiện số)
+    khung1anh:  "",                //   Khung 1 ảnh
+    khung2anh:  "",                //   Khung 2 ảnh
+    khung34anh: "",                //   Khung 3–4 ảnh
+    khung6anh:  "",                //   Khung 6 ảnh
+    theoyeucau: "",                //   Chạm khắc riêng
+    tuvan:      ""                 //   Thẻ tư vấn
+  },
+
+  giaohang: [                      // Dải ảnh xe hàng giao tỉnh (lướt ngang) — thêm/bớt thoải mái
+    "anhthucte1.jpg",
+    "anhthucte2.jpg",
+    "anhthucte3.jpg",
+    "anhthucte4.jpg",
+    "anhthucte5.jpg",
+    "anhthucte6.jpg",
+    "anhthucte7.jpg"
+  ]
+
+};
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   ❖ FACEBOOK PIXEL — dán mã Pixel của bạn vào dòng dưới (trong dấu "")
+   ───────────────────────────────────────────────────────────────
+   • Lấy mã ở: Trình quản lý sự kiện (Events Manager) → Nguồn dữ liệu → Pixel.
+     Mã là dãy số, ví dụ "1234567890123456".
+   • Để trống "" thì Pixel TẮT (không theo dõi gì) — trang vẫn chạy bình thường.
+   • Khi có mã: trang tự đếm lượt xem (PageView) và đếm "Lead" mỗi khi
+     khách bấm nút Zalo, "Contact" khi khách bấm gọi điện.
+   ═══════════════════════════════════════════════════════════════ */
+const PIXEL_ID = "";   // ← dán mã Pixel vào đây
+
+if (PIXEL_ID) {
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+}
+</script>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#">
+      <span class="seal">TT</span>
+      <span><b>Mỹ Nghệ Thanh Tài</b><small>Làng nghề Phù Khê</small></span>
+    </a>
+    <a class="nav-cta" href="https://zalo.me/0877442662">◆ <span class="lbl">Tư vấn qua Zalo</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow">Khung ảnh thờ gia tiên</span>
+      <h1>Thờ cha kính mẹ,<br><em>trọn một chữ hiếu</em></h1>
+      <p class="lead">Khung ảnh thờ gỗ thật, chạm khắc thủ công bởi nghệ nhân làng Phù Khê — để hình bóng ông bà, cha mẹ được lưu giữ trang nghiêm cho con cháu đời sau.</p>
+      <div class="chips">
+        <span class="chip"><span>✓</span> Gỗ thật 100% — hoàn tiền nếu sai</span>
+        <span class="chip"><span>✓</span> 35 năm tay nghề</span>
+        <span class="chip"><span>✓</span> Giao toàn quốc</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn-primary" href="https://zalo.me/0877442662">◆ Nhắn Zalo nhận tư vấn &amp; báo giá</a>
+        <a class="btn-ghost" href="#mau">Xem các mẫu khung ↓</a>
+      </div>
+    </div>
+    <div class="hero-frame reveal in">
+      <div class="mat">
+        <div class="photo" id="anh-hero" alt="Khung ảnh thờ gỗ chạm khắc" data-full="https://thanhtai-mynghe.netlify.app/khunganh.jpg" style="background-image:url('https://thanhtai-mynghe.netlify.app/khunganh.jpg')"></div>
+        <span class="nameplate">Chạm khắc theo gia tiên</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPATHY -->
+<section class="empathy">
+  <div class="wrap inner">
+    <blockquote class="reveal">“Cha mẹ lo cho mình cả đời. Đến khi thờ, chẳng lẽ để ảnh trong một chiếc khung làm qua loa?”</blockquote>
+    <div class="body reveal">
+      <p>Ai thờ cha mẹ cũng muốn làm cho tới. Nhưng nỗi lo lớn nhất là mua phải <strong>khung gỗ ép, gỗ pha tạp</strong> — dùng vài năm là cong vênh, bong tróc; hoặc shop giao <strong>không đúng như cam kết</strong>.</p>
+      <p>Tại Thanh Tài, mỗi chiếc khung được làm từ gỗ thật, do chính nghệ nhân làng nghề chế tác. Chúng tôi lấy <strong>danh dự nghề mộc</strong> ra bảo chứng: đúng gỗ như tư vấn, sai — hoàn tiền.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="mau">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Chọn theo số ảnh gia tiên</div>
+      <h2>Mỗi gia đình một bố cục riêng</h2>
+      <p>Thờ một người, thờ ông bà — bố mẹ, hay cả nhiều đời gia tiên: chọn số khung ảnh phù hợp, hoặc đặt chạm khắc theo đúng ý nguyện của bạn.</p>
+    </div>
+    <div class="grid cols">
+      <article class="card reveal">
+        <div class="thumb" data-anh="khung1anh"><span class="ph">1</span></div>
+        <div class="body">
+          <h3>Khung 1 ảnh</h3>
+          <p class="desc">Thờ một người, trang nghiêm và ấm cúng. Phù hợp bàn thờ nhỏ, căn hộ.</p>
+          <div class="price">từ 1.200.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
+          <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="thumb" data-anh="khung2anh"><span class="ph">2</span><span class="tag">Phổ biến</span></div>
+        <div class="body">
+          <h3>Khung 2 ảnh</h3>
+          <p class="desc">Thờ ông bà, hoặc bố mẹ — cặp đôi cân đối, được chọn nhiều nhất.</p>
+          <div class="price">từ 1.800.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
+          <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="thumb" data-anh="khung34anh"><span class="ph">4</span></div>
+        <div class="body">
+          <h3>Khung 3 – 4 ảnh</h3>
+          <p class="desc">Thờ trọn ông bà nội và bố mẹ trong một bố cục theo vai vế.</p>
+          <div class="price">từ 2.500.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
+          <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="thumb" data-anh="khung6anh"><span class="ph">6</span></div>
+        <div class="body">
+          <h3>Khung 6 ảnh</h3>
+          <p class="desc">Cho gia đình thờ nhiều đời gia tiên, bố cục đầy đặn, bề thế.</p>
+          <div class="price">từ 3.500.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
+          <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="thumb" data-anh="theoyeucau"><span class="ph">＊</span><span class="tag">Theo yêu cầu</span></div>
+        <div class="body">
+          <h3>Chạm khắc riêng</h3>
+          <p class="desc">Khắc tên, câu đối, hoa văn và bố cục ảnh đúng theo ý nguyện gia đình.</p>
+          <div class="price">Báo giá riêng <small>gửi yêu cầu, nhận giá trong tin nhắn</small></div>
+          <a class="pick" href="https://zalo.me/0877442662">Đặt theo yêu cầu →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="thumb" data-anh="tuvan"><span class="ph">?</span></div>
+        <div class="body">
+          <h3>Chưa biết chọn mẫu nào?</h3>
+          <p class="desc">Nhắn cho chúng tôi số ảnh và loại gỗ mong muốn — sẽ có người tư vấn ngay.</p>
+          <div class="price">Tư vấn miễn phí <small>phản hồi nhanh qua Zalo</small></div>
+          <a class="pick" href="https://zalo.me/0877442662">Nhắn để được tư vấn →</a>
+        </div>
+      </article>
+    </div>
+    <p class="price-note">* Mức giá trên là tham khảo, thay đổi theo loại gỗ (mít, gụ, hương…), kích thước và độ chạm khắc. Vui lòng nhắn Zalo để nhận báo giá chính xác.</p>
+  </div>
+</section>
+
+<!-- INVITE / GỬI MẪU -->
+<section class="invite">
+  <div class="wrap">
+    <div class="inner reveal">
+      <span class="tease">Trên đây mới là vài mẫu tiêu biểu</span>
+      <h2>Gửi ảnh người thân — <em>nhận gợi ý mẫu khung hợp nhất</em></h2>
+      <p class="sub">Còn nhiều mẫu chạm khắc riêng tại xưởng chưa kịp đăng. Thay vì để bạn tự dò, hãy để nghệ nhân gợi ý mẫu phù hợp nhất với gia đình mình — hoàn toàn miễn phí.</p>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><b>Gửi ảnh &amp; số người thờ</b><span>Ảnh ông bà, cha mẹ và số ảnh bạn muốn thờ</span></div></div>
+        <div class="step"><span class="n">2</span><div><b>Nhận gợi ý mẫu riêng</b><span>Xưởng chọn mẫu hợp vai vế, kèm mẫu chưa đăng</span></div></div>
+        <div class="step"><span class="n">3</span><div><b>Chốt &amp; nhận báo giá</b><span>Đúng gỗ, đúng mẫu, giao tận nhà toàn quốc</span></div></div>
+      </div>
+      <a class="btn-primary" href="https://zalo.me/0877442662?text=Em%20muốn%20gửi%20ảnh%20người%20thân%20để%20được%20gợi%20ý%20mẫu%20khung%20thờ%20phù%20hợp">◆ Gửi yêu cầu — xem thêm mẫu qua Zalo</a>
+      <p class="note">Mỗi gia đình một câu chuyện riêng — chúng tôi tư vấn mẫu đúng với ý nguyện của bạn, không rập khuôn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Vì sao gia đình tin chọn</div>
+      <h2>Đồ thờ — không thể làm qua loa</h2>
+    </div>
+    <div class="grid trust-grid">
+      <div class="tcard reveal"><div class="ic">木</div><h3>Cam kết chuẩn gỗ</h3><p>Đúng loại gỗ như tư vấn. Sai lệch chất liệu — hoàn tiền 100%.</p></div>
+      <div class="tcard reveal"><div class="ic">35</div><h3>Tay nghề lâu đời</h3><p>Hơn 35 năm chế tác gỗ truyền thống tại làng nghề Phù Khê, Bắc Ninh.</p></div>
+      <div class="tcard reveal"><div class="ic">✓</div><h3>Đúng mô tả</h3><p>Sản phẩm giao đúng hình ảnh thực tế. Bảo hành dài hạn.</p></div>
+      <div class="tcard reveal"><div class="ic">⊕</div><h3>Giao khắp các tỉnh</h3><p>Đóng gói chắc chắn, gửi đi cả nước — an toàn cho cả khung lớn nhiều ảnh.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Đơn thật · Giao thật</div>
+      <h2>Mỗi ngày, hàng lên đường về khắp các tỉnh</h2>
+      <p>Những chuyến xe giao khung ảnh thờ đi muôn nơi — đóng gói chắc chắn, đến tận tay từng gia đình trên cả nước.</p>
+    </div>
+    <p class="swipe-hint">← Vuốt ngang để xem thêm →</p>
+    <div class="gstrip reveal" id="dai-giao-hang"></div>
+  </div>
+</section>
+
+<!-- CONSULT -->
+<section class="consult">
+  <div class="wrap">
+    <div class="inner reveal">
+      <div>
+        <h2>Chưa biết bắt đầu từ đâu khi lập bàn thờ?</h2>
+        <ul>
+          <li>Nên làm khung mấy ảnh cho ông bà — bố mẹ?</li>
+          <li>Bố cục ảnh theo vai vế gia tiên thế nào cho đúng?</li>
+          <li>Gỗ mít, gỗ gụ hay gỗ hương phù hợp với gia đình bạn?</li>
+          <li>Kích thước nào vừa với bàn thờ nhà phố hay căn hộ?</li>
+        </ul>
+      </div>
+      <div class="side">
+        <a class="btn-primary" href="https://zalo.me/0877442662">◆ Nhắn Zalo tư vấn miễn phí</a>
+        <small>Gửi ảnh bàn thờ hiện tại, chúng tôi tư vấn từ A–Z.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Khách hàng nói gì</div>
+      <h2>Những gia đình đã tin chọn</h2>
+    </div>
+    <div class="grid rev-grid">
+      <div class="rcard reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Mình đặt khung 4 ảnh thờ ông bà nội và bố mẹ. Gỗ mít thơm, vân đẹp, chạm sắc nét. Giao đúng hẹn, đóng gói rất kỹ.”</p>
+        <div class="who"><span class="av">H</span><div><b>Chị Hoa</b><span>Hà Nội</span></div></div>
+      </div>
+      <div class="rcard reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Nhà mới ở chung cư, được tư vấn chọn khung gọn mà vẫn trang nghiêm. Anh chủ nhiệt tình, trả lời nhanh, rất yên tâm.”</p>
+        <div class="who"><span class="av">T</span><div><b>Anh Tuấn</b><span>TP. Hồ Chí Minh</span></div></div>
+      </div>
+      <div class="rcard reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Đặt khắc theo yêu cầu cho gia tiên, làm đúng 100% ý mình. Đáng đồng tiền, sẽ giới thiệu cho người thân.”</p>
+        <div class="who"><span class="av">M</span><div><b>Chị Mai</b><span>Bắc Ninh</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Để hình bóng người thân được thờ phụng trọn vẹn</h2>
+    <p>Nhắn Zalo ngay hôm nay để được tư vấn mẫu khung, loại gỗ và báo giá phù hợp với gia đình bạn.</p>
+    <div class="phone">0877.44.2662</div>
+    <div class="hero-cta">
+      <a class="btn-primary" href="https://zalo.me/0877442662">◆ Nhắn tin Zalo</a>
+      <a class="btn-ghost" href="tel:0877442662">Hoặc gọi điện trực tiếp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#"><span class="seal">TT</span><span><b style="color:#e7d7be">Mỹ Nghệ Thanh Tài</b><small>Làng nghề Phù Khê</small></span></a>
+    <p>Chuyên khung ảnh thờ &amp; đồ thờ gỗ mỹ nghệ — chế tác thủ công tận xưởng.</p>
+    <p>Thôn Đông, Phù Khê, Từ Sơn, Bắc Ninh · Hotline / Zalo: <a href="https://zalo.me/0877442662">0877.44.2662</a></p>
+    <p style="margin-top:.8rem;opacity:.7">© 2026 Mỹ Nghệ Thanh Tài. Bảo lưu mọi quyền.</p>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="mc" href="tel:0877442662">Gọi điện</a>
+  <a class="mz" href="https://zalo.me/0877442662">Nhắn Zalo tư vấn</a>
+</div>
+
+<div class="lightbox" id="lb" aria-hidden="true" role="dialog" aria-label="Ảnh phóng to">
+  <button class="close" id="lb-close" aria-label="Đóng ảnh">×</button>
+  <img id="lb-img" alt="Ảnh phóng to">
+  <div class="hint">Chạm vào bất kỳ đâu để đóng</div>
+</div>
+
+<script>
+  (function(){
+    function url(name){return name ? (ANH_BASE + name) : "";}
+
+    var hero=document.getElementById('anh-hero');
+    if(hero && ANH.hero){var hu=url(ANH.hero);hero.style.backgroundImage="url('"+hu+"')";hero.setAttribute('data-full',hu);}
+
+    document.querySelectorAll('[data-anh]').forEach(function(thumb){
+      var name=ANH.sanpham[thumb.getAttribute('data-anh')];
+      if(!name)return;
+      var img=document.createElement('img');
+      img.src=url(name);
+      img.alt='Mẫu khung ảnh thờ';
+      img.loading='lazy';
+      img.style.cssText='width:100%;height:100%;object-fit:cover';
+      var ph=thumb.querySelector('.ph');
+      if(ph)ph.remove();
+      thumb.insertBefore(img,thumb.firstChild);
+    });
+
+    var strip=document.getElementById('dai-giao-hang');
+    if(strip){
+      (ANH.giaohang||[]).forEach(function(name){
+        if(!name)return;
+        var img=document.createElement('img');
+        img.src=url(name);
+        img.alt='Hàng giao đi các tỉnh';
+        img.loading='lazy';
+        img.onerror=function(){var d=document.createElement('div');d.className='gph';d.textContent='Ảnh xe hàng giao tỉnh';this.replaceWith(d);};
+        strip.appendChild(img);
+      });
+    }
+  })();
+
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  (function(){
+    const lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img');
+    function openLb(src,alt){lbImg.src=src;lbImg.alt=alt||'Ảnh phóng to';lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+    function closeLb(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';lbImg.removeAttribute('src');}
+    document.addEventListener('click',function(e){
+      if(lb.classList.contains('open')){closeLb();return;}
+      const z=e.target.closest('[data-full]');
+      if(z){openLb(z.getAttribute('data-full'),z.getAttribute('alt'));return;}
+      const im=e.target.closest('.gstrip img, .card .thumb img');
+      if(im&&im.tagName==='IMG'){openLb(im.currentSrc||im.src,im.alt);return;}
+    });
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+  })();
+
+  (function(){
+    if(typeof PIXEL_ID==='undefined' || !PIXEL_ID) return;
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a[href]');
+      if(!a)return;
+      var h=a.getAttribute('href')||'';
+      if(h.indexOf('zalo.me')>-1){ if(window.fbq) fbq('track','Lead'); }
+      else if(h.indexOf('tel:')===0){ if(window.fbq) fbq('track','Contact'); }
+    });
+  })();
+</script>
+
+</body>
+</html>
