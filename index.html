@@ -379,6 +379,19 @@
     .mobile-bar .mz{background:var(--gold);color:#23150a;flex:1.5}
     .mobile-bar .mc{border:1px solid var(--gold-line);color:var(--cream)}
   }
+
+  /* ═══ THÊM MỚI: nút Messenger (phụ) + nút Messenger thanh mobile — chỉ thêm class mới, không sửa cái cũ ═══ */
+  .btn-second{
+    display:inline-flex;align-items:center;gap:.5rem;
+    border:1px solid var(--gold-line);color:var(--cream);font-weight:600;
+    padding:.85rem 1.5rem;border-radius:46px;font-size:.98rem;
+    transition:transform .2s,border-color .2s,background .2s;
+  }
+  .btn-second:hover{transform:translateY(-2px);border-color:var(--gold-soft);background:rgba(181,145,47,.12)}
+  .mobile-bar .mm{border:1px solid var(--gold-line);color:var(--cream)}
+  @media (max-width:560px){
+    .hero-cta .btn-second{width:100%;justify-content:center}
+  }
 </style>
 </head>
 <body>
@@ -455,7 +468,7 @@ if (PIXEL_ID) {
       <span class="seal">TT</span>
       <span><b>Mỹ Nghệ Thanh Tài</b><small>Làng nghề Phù Khê</small></span>
     </a>
-    <a class="nav-cta" href="https://zalo.me/0877442662">◆ <span class="lbl">Tư vấn qua Zalo</span></a>
+    <a class="nav-cta" href="https://zalo.me/0877442662?text=Mình%20cần%20tư%20vấn%20khung%20ảnh%20thờ">◆ <span class="lbl">Tư vấn qua Zalo</span></a>
   </div>
 </header>
 
@@ -472,7 +485,8 @@ if (PIXEL_ID) {
         <span class="chip"><span>✓</span> Giao toàn quốc</span>
       </div>
       <div class="hero-cta">
-        <a class="btn-primary" href="https://zalo.me/0877442662">◆ Nhắn Zalo nhận tư vấn &amp; báo giá</a>
+        <a class="btn-primary" href="https://zalo.me/0877442662?text=Mình%20cần%20tư%20vấn%20khung%20ảnh%20thờ%20và%20báo%20giá">◆ Nhắn Zalo nhận tư vấn &amp; báo giá</a>
+        <a class="btn-second mess-btn" href="https://m.me/100066729761220">✉ Nhắn Messenger</a>
         <a class="btn-ghost" href="#mau">Xem các mẫu khung ↓</a>
       </div>
     </div>
@@ -511,7 +525,7 @@ if (PIXEL_ID) {
           <h3>Khung 1</h3>
           <p class="desc">Thờ một người, trang nghiêm và ấm cúng. Phù hợp bàn thờ nhỏ, căn hộ.</p>
           <div class="price">từ 1.200.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
-          <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
+          <a class="pick" href="https://zalo.me/0877442662?text=Mình%20quan%20tâm%20Khung%201%20ảnh%20tư%20vấn%20giúp%20mình">Nhận tư vấn mẫu này →</a>
         </div>
       </article>
       <article class="card reveal">
@@ -520,7 +534,7 @@ if (PIXEL_ID) {
           <h3>Khung 2</h3>
           <p class="desc">Thờ ông bà, hoặc bố mẹ — cặp đôi cân đối, được chọn nhiều nhất.</p>
           <div class="price">từ 1.800.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
-          <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
+          <a class="pick" href="https://zalo.me/0877442662?text=Mình%20quan%20tâm%20Khung%202%20ảnh%20tư%20vấn%20giúp%20mình">Nhận tư vấn mẫu này →</a>
         </div>
       </article>
       <article class="card reveal">
@@ -529,7 +543,7 @@ if (PIXEL_ID) {
           <h3>Khung 3</h3>
           <p class="desc">Thờ trọn ông bà nội và bố mẹ trong một bố cục theo vai vế.</p>
           <div class="price">từ 2.500.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
-          <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
+          <a class="pick" href="https://zalo.me/0877442662?text=Mình%20quan%20tâm%20Khung%203%20tư%20vấn%20giúp%20mình">Nhận tư vấn mẫu này →</a>
         </div>
       </article>
       <article class="card reveal">
@@ -538,7 +552,7 @@ if (PIXEL_ID) {
           <h3>Khung 4</h3>
           <p class="desc">Cho gia đình thờ nhiều đời gia tiên, bố cục đầy đặn, bề thế.</p>
           <div class="price">từ 3.500.000đ <small>tùy loại gỗ &amp; kích thước</small></div>
-          <a class="pick" href="https://zalo.me/0877442662">Nhận tư vấn mẫu này →</a>
+          <a class="pick" href="https://zalo.me/0877442662?text=Mình%20quan%20tâm%20Khung%204%20tư%20vấn%20giúp%20mình">Nhận tư vấn mẫu này →</a>
         </div>
       </article>
       <article class="card reveal">
@@ -547,7 +561,7 @@ if (PIXEL_ID) {
           <h3>Chạm khắc riêng</h3>
           <p class="desc">Khắc tên, câu đối, hoa văn và bố cục ảnh đúng theo ý nguyện gia đình.</p>
           <div class="price">Báo giá riêng <small>gửi yêu cầu, nhận giá trong tin nhắn</small></div>
-          <a class="pick" href="https://zalo.me/0877442662">Đặt theo yêu cầu →</a>
+          <a class="pick" href="https://zalo.me/0877442662?text=Mình%20muốn%20đặt%20khắc%20theo%20yêu%20cầu">Đặt theo yêu cầu →</a>
         </div>
       </article>
       <article class="card reveal">
@@ -556,7 +570,7 @@ if (PIXEL_ID) {
           <h3>Chưa biết chọn mẫu nào?</h3>
           <p class="desc">Nhắn cho chúng tôi số ảnh và loại gỗ mong muốn — sẽ có người tư vấn ngay.</p>
           <div class="price">Tư vấn miễn phí <small>phản hồi nhanh qua Zalo</small></div>
-          <a class="pick" href="https://zalo.me/0877442662">Nhắn để được tư vấn →</a>
+          <a class="pick" href="https://zalo.me/0877442662?text=Mình%20chưa%20biết%20chọn%20mẫu%20nào%20tư%20vấn%20giúp%20mình">Nhắn để được tư vấn →</a>
         </div>
       </article>
     </div>
@@ -625,7 +639,7 @@ if (PIXEL_ID) {
         </ul>
       </div>
       <div class="side">
-        <a class="btn-primary" href="https://zalo.me/0877442662">◆ Nhắn Zalo tư vấn miễn phí</a>
+        <a class="btn-primary" href="https://zalo.me/0877442662?text=Mình%20cần%20tư%20vấn%20lập%20bàn%20thờ">◆ Nhắn Zalo tư vấn miễn phí</a>
         <small>Gửi ảnh bàn thờ hiện tại, chúng tôi tư vấn từ A–Z.</small>
       </div>
     </div>
@@ -666,7 +680,8 @@ if (PIXEL_ID) {
     <p>Nhắn Zalo ngay hôm nay để được tư vấn mẫu khung, loại gỗ và báo giá phù hợp với gia đình bạn.</p>
     <div class="phone">0877.44.2662</div>
     <div class="hero-cta">
-      <a class="btn-primary" href="https://zalo.me/0877442662">◆ Nhắn tin Zalo</a>
+      <a class="btn-primary" href="https://zalo.me/0877442662?text=Mình%20cần%20tư%20vấn%20mẫu%20khung%20và%20báo%20giá">◆ Nhắn tin Zalo</a>
+      <a class="btn-second mess-btn" href="https://m.me/100066729761220">✉ Nhắn Messenger</a>
       <a class="btn-ghost" href="tel:0877442662">Hoặc gọi điện trực tiếp</a>
     </div>
   </div>
@@ -682,8 +697,9 @@ if (PIXEL_ID) {
 </footer>
 
 <div class="mobile-bar">
-  <a class="mc" href="tel:0877442662">Gọi điện</a>
-  <a class="mz" href="https://zalo.me/0877442662">Nhắn Zalo tư vấn</a>
+  <a class="mc" href="tel:0877442662">Gọi</a>
+  <a class="mm mess-btn" href="https://m.me/100066729761220">Messenger</a>
+  <a class="mz" href="https://zalo.me/0877442662?text=Mình%20cần%20tư%20vấn%20khung%20ảnh%20thờ">Nhắn Zalo</a>
 </div>
 
 <div class="lightbox" id="lb" aria-hidden="true" role="dialog" aria-label="Ảnh phóng to">
@@ -767,6 +783,35 @@ if (PIXEL_ID) {
       }
     });
   })();
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   ❖ THÊM MỚI — theo dõi click nút Messenger (m.me)
+   ───────────────────────────────────────────────────────────────
+   • Đoạn này ĐỘC LẬP, KHÔNG sửa khối Pixel/CAPI hay đoạn bắt click Zalo/tel ở trên.
+   • Nó chỉ bắt riêng link "m.me" (Messenger) → đếm "Lead" giống như Zalo,
+     dùng event_id riêng nên Meta không đếm trùng.
+   • Nếu KHÔNG muốn tính Messenger là Lead, xóa nguyên khối <script> này là xong,
+     mọi thứ còn lại vẫn chạy bình thường.
+   ═══════════════════════════════════════════════════════════════ */
+(function(){
+  if(typeof PIXEL_ID==='undefined' || !PIXEL_ID) return;
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href]');
+    if(!a)return;
+    var h=a.getAttribute('href')||'';
+    if(h.indexOf('m.me')>-1){
+      var eid='lead_'+Date.now();
+      if(window.fbq) fbq('track','Lead',{},{eventID:eid});
+      fetch('/.netlify/functions/capi',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({event_name:'Lead',event_id:eid,url:location.href})
+      }).catch(function(){});
+    }
+  });
+})();
 </script>
 
 </body>
